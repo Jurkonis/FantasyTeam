@@ -1,0 +1,742 @@
+$nav-background-color: #ebebeb;
+$league-background-color: #000000;
+$nav-text-color: #2c4268;
+$logo-text-color: black;
+
+$body-background-color: #0d1c3b;
+
+$match-team-name-color: #ebebeb;
+$match-team-name-hover-text-color: #00a9e2;
+
+$button-background-color: #3e69b9;
+$button-hover-background-color: #0059ff;
+
+$tournament-details-background-color: #12377c;
+$tournament-text-color: #00a9e2;
+
+$fantasy-team-player-background-color: #12377c;
+
+$profile-border-color: #91b7ff;
+
+$result-color: #ffe019;
+
+$price-color: #ffffff;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin-top: 55px;
+  text-align: center;
+  color: white;
+  background: $body-background-color;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  background-color: $nav-background-color;
+  a {
+    color: $logo-text-color;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  li {
+    color: $nav-text-color;
+    font-size: 17px;
+  }
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.myButton {
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 15px 5px 15px;
+  background-color: $button-background-color;
+  margin: auto 10px auto;
+  cursor: pointer;
+}
+
+.addButton {
+  border-radius: 5px;
+  width: 120px;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 15px 5px 15px;
+  background-color: $button-background-color;
+  margin: 30px 0 20px 50px;
+  cursor: pointer;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.myButton2 {
+  border-radius: 5px;
+  width: 110px;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0 5px 0;
+  background-color: $button-background-color;
+  margin: auto 10px auto;
+  cursor: pointer;
+  text-align: center;
+}
+
+.myButton3 {
+  border-radius: 5px;
+  width: 110px;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0 5px 0;
+  background-color: $button-background-color;
+  margin: 15px auto 0 auto;
+  cursor: pointer;
+  text-align: center;
+}
+
+.myActiveButton {
+  border-radius: 5px;
+  width: 110px;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0 5px 0;
+  background-color: $button-hover-background-color;
+  margin: auto 10px auto;
+  cursor: pointer;
+  text-align: center;
+}
+
+.myButtonInFantasyPlayer {
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 auto 70px auto;
+  padding: 5px 15px 5px 15px;
+  width: 150px;
+  background-color: $button-background-color;
+}
+
+.myButtonInFantasyPlayer:hover,
+.myButton:hover,
+.addButton:hover,
+.myButton2:hover,
+.myButton3:hover {
+  background-color: $button-hover-background-color;
+}
+
+.buttonTournaments {
+  display: flex;
+  h3 {
+    margin: 30px auto 20px auto;
+  }
+}
+
+.userName,
+.userCoins {
+  padding: 5px 10px 5px 10px;
+  margin: 0 auto 0 auto;
+}
+
+.userPlace {
+  margin-left: 15px;
+  padding: 5px 0 5px;
+}
+
+// Modal
+
+.header,
+.body,
+.footer {
+  color: black;
+}
+.header {
+  display: flex;
+  .left {
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .right {
+    cursor: pointer;
+    margin: 10px 20px 0 auto;
+    font-size: 25px;
+  }
+}
+
+.body {
+  label {
+    font-size: 18px;
+    width: 300px;
+    text-align: left;
+  }
+  input {
+    width: 300px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: solid 2px;
+    background: #ecf0f1;
+  }
+}
+.footer {
+  .btn {
+    margin: 20px 30px 40px 30px;
+    padding: 10px 5px 10px 5px;
+  }
+}
+
+// Tournament Page
+
+.tournamentWrapper {
+  display: flex;
+  margin: 15px 50px 15px 50px;
+  background-color: $tournament-details-background-color;
+  .time {
+    margin: 15px 40px 10px 10px;
+    text-align: left;
+  }
+  .tournamentName {
+    color: $tournament-text-color;
+    margin: 25px 20px 25px 25px;
+    width: 300px;
+  }
+  .tournamentNameInDetails {
+    color: $tournament-text-color;
+    margin: 25px 20px 25px 25px;
+    width: 400px;
+  }
+  .tournamentDetailsButtonsToLeft {
+    display: flex;
+    margin-left: auto;
+    margin-right: 15px;
+  }
+  .tournamentDetailsButton {
+    margin: auto 15px auto;
+
+    a {
+      color: #f9f9f9;
+      font-size: 15px;
+    }
+  }
+}
+
+.playingTeamsAndUsers {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+  h5 {
+    border-bottom: 2px solid #b0ff42;
+    width: auto;
+  }
+  .playingTeams {
+    margin: 0 0 0 50px;
+    width: 800px;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .registeredUsers {
+    margin: 0 auto 0 auto;
+    width: 400px;
+  }
+  .container {
+    margin: 0 40px;
+    width: 350px;
+    .reward {
+      font-size: 15px;
+      display: flex;
+      border-bottom: 2px solid #73ad21;
+      width: auto;
+      img {
+        height: 25px;
+        fill: white;
+        background-color: white;
+      }
+      h5 {
+        margin: 0;
+      }
+      .left {
+        margin: 7px 0 7px 15px;
+      }
+      .right {
+        margin: 7px 15px 7px auto;
+      }
+    }
+  }
+}
+
+.tournamentTeamDetails {
+  width: 200px;
+  height: 150px;
+  margin-bottom: 10px;
+  a {
+    text-decoration: none;
+    color: $match-team-name-color;
+  }
+
+  .teamImg img {
+    width: 60%;
+  }
+}
+
+.tournamentTeamDetails:hover {
+  a {
+    color: $match-team-name-hover-text-color;
+  }
+}
+
+//Profile
+
+.profile {
+  display: flex;
+  padding-top: 30px;
+  h4 {
+    margin-left: 15px;
+  }
+  .line {
+    display: flex;
+    padding: 0 0 15px 15px;
+    .lineLeft {
+      width: 200px;
+      text-align: right;
+      margin-right: 20px;
+    }
+    .lineRight {
+      width: 300px;
+      text-align: left;
+      word-break: break-all;
+    }
+  }
+  .profileLeft {
+    width: 200px;
+    margin-right: 25px;
+    margin-left: auto;
+    .wrapper {
+      border: 2px solid;
+      border-color: $profile-border-color;
+      margin-bottom: 20px;
+      padding-top: 20px;
+      background-color: $tournament-details-background-color;
+    }
+    .profilePicture img {
+      width: 65px;
+    }
+  }
+  .profileRight {
+    width: 600px;
+    margin-right: auto;
+    h4 {
+      text-align: left;
+      margin-top: 15px;
+    }
+    .personalDetails {
+      border: 2px solid;
+      border-color: $profile-border-color;
+      margin-bottom: 20px;
+      background-color: $tournament-details-background-color;
+    }
+    .security {
+      border: 2px solid;
+      border-color: $profile-border-color;
+      background-color: $tournament-details-background-color;
+    }
+  }
+}
+
+//Fantasy Team Page
+
+.fantasyTeamWrapper {
+  margin: 20px auto 0 auto;
+}
+
+.fantasyTeamList {
+  justify-content: center;
+  margin-top: 20px;
+  display: flex;
+}
+
+.fantasyTeamPlayer {
+  width: 250px;
+  height: 540px;
+  margin: 0 20px 0 20px;
+  background-color: $fantasy-team-player-background-color;
+  border-radius: 25px;
+}
+
+.fantasyTeamPlayer .role img {
+  width: 65px;
+  margin-top: 20px;
+}
+
+.fantasyTeamPlayerImg {
+  padding-top: 7px;
+  padding-bottom: 20px;
+}
+
+.fantasyTeamPlayerImg img {
+  width: 200px;
+}
+
+.fantasyTeamPlayerLogo {
+  padding-top: 7px;
+  padding-bottom: 20px;
+}
+
+.fantasyTeamPlayerLogo img {
+  width: 120px;
+}
+
+//Login
+.loginWrapper {
+  width: 800px;
+  margin: 125px auto 0 auto;
+  padding: 60px 0px 20px 0px;
+  background: #f9f9f9;
+  h3 {
+    color: black;
+  }
+}
+
+.loginWrapper h5 {
+  font-size: 2.5em;
+  color: black;
+}
+
+.loginWrapper input,
+.timeAdd {
+  padding: 10px;
+  width: 420px !important;
+  margin: 25px auto 5px;
+  border: #ccc 1px solid;
+}
+
+.timeAdd2 {
+  padding: 10px;
+  width: 300px !important;
+  border-radius: 4px;
+  background: #ecf0f1;
+  font-size: 1em;
+  border-bottom: #ccc 2px solid;
+  color: #aaaaaa;
+}
+
+.username,
+.password {
+  border-radius: 4px;
+  background: #ecf0f1;
+  font-size: 1em;
+}
+
+.username {
+  border-bottom: #ccc 2px solid;
+  color: #aaaaaa;
+}
+
+.button {
+  margin-top: 25px;
+}
+
+.btn {
+  background: #2ecc71;
+  width: 150px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+  border-radius: 4px;
+  border: #27ae60 1px solid;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 16px;
+  font-weight: 900;
+  font-size: 1.2em;
+}
+
+@media only screen and (max-width: 960px) {
+  .loginWrapper {
+    width: 90%;
+    margin: 125px auto 0 auto;
+    padding: 60px 0px 0px 0px;
+    background: rgb(202, 202, 241);
+  }
+  .loginWrapper input {
+    padding: 10px;
+    width: 85%;
+    height: 70px;
+    margin: 40px auto 5px;
+    border: #ccc 1px solid;
+  }
+
+  .username,
+  .password {
+    font-size: 1.2em;
+  }
+}
+
+.Schedule,
+.league,
+.matchDetails,
+.matchTime,
+.leagueActive {
+  display: flex;
+}
+
+.matchTypes {
+  display: flex;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  border-bottom: solid 1px;
+}
+
+.matchList {
+  margin-right: 350px;
+  width: 100%;
+}
+
+.leagueList {
+  width: 350px;
+  height: 94vh;
+  border-left: 5px solid;
+  background-color: $league-background-color;
+  position: fixed;
+  right: 0;
+  overflow-y: scroll;
+  li {
+    border-bottom: solid 1px;
+  }
+}
+
+.leagueList::-webkit-scrollbar {
+  display: none;
+}
+
+.league {
+  padding: 10px;
+  opacity: 0.3;
+  transition: opacity 0.1s ease-out;
+}
+
+.leagueActive {
+  padding: 10px;
+  opacity: 1;
+  transition: opacity 0.1s ease-out;
+}
+
+.leagueImg {
+  width: 80px;
+  height: 60px;
+}
+
+.leagueImg img {
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leagueDetails {
+  width: 200px;
+  height: 60px;
+}
+
+.leagueDetails p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.match {
+  border-bottom: solid 1px;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.matchTeamRight,
+.matchTeamLeft {
+  width: 300px;
+}
+
+.matchTeamLeft {
+  margin-left: auto;
+  text-align: right;
+  img {
+    margin-left: 15px;
+  }
+}
+
+.matchTeamRight {
+  margin-right: auto;
+  text-align: left;
+  img {
+    margin-right: 15px;
+  }
+}
+
+.matchDetails {
+  width: auto;
+  margin: 0 auto 5px;
+  a {
+    text-decoration: none;
+    color: $match-team-name-color;
+  }
+  a:hover {
+    color: $match-team-name-hover-text-color;
+  }
+}
+
+.matchDetails img {
+  width: 60px;
+  height: 60px;
+}
+
+.flex {
+  display: flex;
+}
+
+.matchTime {
+  padding: 15px 15px 0 15px;
+  h4 {
+    text-align: left;
+  }
+  .matchResult {
+    margin: 0 auto 0 auto;
+    display: flex;
+    .resultLeft,
+    .resultRight {
+      padding: 5px 20px 5px 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .resultRight {
+      margin-right: 150px;
+    }
+  }
+}
+
+.winner {
+  color: $result-color;
+}
+
+.matchStrategy {
+  padding: 15px;
+  width: 125px;
+}
+
+// Shop
+
+.shopWrapper {
+  h2 {
+    margin: 80px 20px 20px 20px;
+  }
+  .shopList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    .icon {
+      margin: 0 30px 60px 30px;
+      .iconImg {
+        img {
+          height: 115px;
+        }
+      }
+      .price {
+        font-size: 20px;
+        color: $price-color;
+      }
+    }
+  }
+}
+
+// Teams list and team
+.teamsList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-content: center;
+  margin: 20px 50px 20px 50px;
+}
+
+.team {
+  border-radius: 50%;
+  background-color: #d4d4d4;
+  margin: 15px;
+  border-style: solid;
+  border-color: coral;
+  padding: 15px;
+}
+.team .name {
+  margin: 10px 0 10px 0;
+  color: black;
+  font-weight: bold;
+}
+
+.team img {
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Team Details
+.teamPlayersList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.playerWrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid white;
+}
+
+.playerImg {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+}
+
+.playerImg img {
+  width: 120%;
+  height: auto;
+}
+
+.playerRole img {
+  height: 50px;
+  width: auto;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+.playerDetails {
+  height: auto;
+  position: absolute;
+  bottom: 20px;
+}
+
+/* Hover
+*/
+.league:hover {
+  opacity: 1;
+  transition: opacity 0.1s ease-out;
+}
