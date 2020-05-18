@@ -46,6 +46,7 @@ class SelectPlayer extends Component {
       >
         <div className="playerWrapper">
           <div className="playerRole">
+            {console.log(this.props.player)}
             <img src={this.renderSwitch(this.props.player.role)} alt="role" />
           </div>
           <div className="playerDetails">

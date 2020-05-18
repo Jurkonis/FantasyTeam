@@ -1,0 +1,17 @@
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\FLTeam.Tests.deps.json
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\FLTeam.Tests.runtimeconfig.json
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\FLTeam.Tests.runtimeconfig.dev.json
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\FLTeam.Tests.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\FLTeam.Tests.pdb
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\FLTeam.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\FLTeam.pdb
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\FLTeam.Tests.csprojAssemblyReference.cache
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\FLTeam.Tests.csproj.CoreCompileInputs.cache
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\FLTeam.Tests.AssemblyInfoInputs.cache
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\FLTeam.Tests.AssemblyInfo.cs
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\FLTeam.Tests.csproj.CopyComplete
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\FLTeam.Tests.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\FLTeam.Tests.pdb

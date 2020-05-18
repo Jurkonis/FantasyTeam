@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\LOLFantasyTeam\\Backend\\flteam\\FLTeam.csproj": {}
+    "D:\\GitHub\\Bakalauras\\Backend\\FLTeam\\FLTeam.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\LOLFantasyTeam\\Backend\\flteam\\FLTeam.csproj": {
+    "D:\\GitHub\\Bakalauras\\Backend\\FLTeam\\FLTeam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\LOLFantasyTeam\\Backend\\flteam\\FLTeam.csproj",
+        "projectUniqueName": "D:\\GitHub\\Bakalauras\\Backend\\FLTeam\\FLTeam.csproj",
         "projectName": "FLTeam",
-        "projectPath": "D:\\GitHub\\LOLFantasyTeam\\Backend\\flteam\\FLTeam.csproj",
+        "projectPath": "D:\\GitHub\\Bakalauras\\Backend\\FLTeam\\FLTeam.csproj",
         "packagesPath": "C:\\Users\\Dovydas\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\LOLFantasyTeam\\Backend\\flteam\\obj\\",
+        "outputPath": "D:\\GitHub\\Bakalauras\\Backend\\FLTeam\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "GoogleAuthenticator": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -57,10 +61,24 @@
               "version": "[2.1.2, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[*, )"
+              "version": "[2.1.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[2.1.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.14, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",

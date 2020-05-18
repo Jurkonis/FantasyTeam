@@ -23,7 +23,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getLeagues?hl=en-US");
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<LeagueData>>(result);
+				var data = JsonConvert.DeserializeObject<Data<LeagueData>>(result);
 				return Ok(data.data.leagues.OrderBy(x => x.priority));
 			}
 		}
@@ -36,7 +36,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getLeagues?hl=en-US");
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<LeagueData>>(result);
+				var data = JsonConvert.DeserializeObject<Data<LeagueData>>(result);
 				return data.data.leagues.OrderBy(x => x.priority).ToList();
 			}
 		}
@@ -53,42 +53,7 @@ namespace FLTeam.Controllers
 
 		}
 
-		//Testing
-		/*[HttpGet("schedule/{id}/teams/{upcoming}")]
-		public async Task<ActionResult<List<Teamm>>> GetTeams(string id , string upcoming)
-		{
-			List<Event> events;
-			if (upcoming== "true")
-				events = await GetUpcomingEvents(id);
-			else
-				events = await GetEvents(id);
 
-			// seni duomenys del testavimo
-			//events = events.Where(x => x.startTime < DateTime.Now.AddDays(7)).ToList<Event>();
-			var slugs = new List<string>();
-			foreach (Event e in events)
-			{
-				foreach (TeamEvent t in e.match.teams)
-				{
-					var name = t.name.ToLower().Replace(' ', '-');
-					if (!slugs.Contains(name) && name != "tbd")
-						slugs.Add(name);
-				}
-			}
-
-			List<Teamm> teams = new List<Teamm>();
-
-			foreach (string slug in slugs)
-			{
-				var data = await this.GetTeamsList(slug);
-				if (data != null)
-					teams.Add(data);
-			}
-
-			return Ok(teams);
-		}*/
-
-		
 		public async Task<List<Teamm>> ForTournamentGetTeams(string id, DateTime startTime,DateTime endTime)
 		{
 			List<Event> events = await ForTournamentGetEvents(id,startTime,endTime);
@@ -116,27 +81,6 @@ namespace FLTeam.Controllers
 			return teams;
 		}
 
-		
-		/*[HttpGet("schedule/{id}/teams/names")]
-		public async Task<ActionResult<List<string>>> GetTeamsNames(string id)
-		{
-			List<Event> events = await GetEvents(id);
-			// seni duomenys del testavimo
-			//events = events.Where(x => x.startTime < DateTime.Now.AddDays(7)).ToList<Event>();
-			var slugs = new List<string>();
-			foreach (Event e in events)
-			{
-				foreach (TeamEvent t in e.match.teams)
-				{
-					var name = t.name.ToLower().Replace(' ', '-');
-					if (!slugs.Contains(name) && name != "tbd")
-						slugs.Add(name);
-				}
-			}
-
-			return Ok(slugs);
-		}*/
-
 		//testing to get teams list
 		public async Task<Teamm> GetTeamsList(string id)
 		{
@@ -145,7 +89,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getTeams?hl=en-US&id=" + id);
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<Teams>>(result);
+				var data = JsonConvert.DeserializeObject<Data<Teams>>(result);
 
 				if (data.data != null)
 					return data.data.teams[0];
@@ -164,7 +108,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getTeams?hl=en-US&id=" + id);
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<Teams>>(result);
+				var data = JsonConvert.DeserializeObject<Data<Teams>>(result);
 				if (data.data == null)
 					return NotFound(null);
 				return Ok(data.data.teams[0]);
@@ -181,7 +125,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getStandings?hl=en-US&tournamentId=" + idd);
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<Standings>>(result);
+				var data = JsonConvert.DeserializeObject<Data<Standings>>(result);
 				return Ok(data.data.standings);
 			}
 		}
@@ -193,7 +137,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getTournamentsForLeague?hl=en-US&leagueId=" + id);
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<TournamentsLeagues>>(result);
+				var data = JsonConvert.DeserializeObject<Data<TournamentsLeagues>>(result);
 				var orderedTournaments = data.data.leagues[0].tournaments.OrderByDescending(x => x.startDate).ToList<Tournament>();
 				return orderedTournaments[0].id;
 			}
@@ -207,7 +151,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getSchedule?hl=en-US&leagueId=" + id);
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<Schedu>>(result);
+				var data = JsonConvert.DeserializeObject<Data<Schedu>>(result);
 				
 				events.AddRange(data.data.schedule.events.Where(x => x.startTime < DateTime.Now));
 
@@ -215,7 +159,7 @@ namespace FLTeam.Controllers
 				{
 					response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getSchedule?hl=en-US&leagueId=" + id + "&pageToken=" + data.data.schedule.pages.newer);
 					result = await response.Content.ReadAsStringAsync();
-					data = JsonConvert.DeserializeObject<Madness<Schedu>>(result);
+					data = JsonConvert.DeserializeObject<Data<Schedu>>(result);
 					
 					events.AddRange(data.data.schedule.events.Where(x => x.startTime < DateTime.Now));
 				}
@@ -234,7 +178,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getSchedule?hl=en-US&leagueId=" + id);
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<Schedu>>(result);
+				var data = JsonConvert.DeserializeObject<Data<Schedu>>(result);
 				events.AddRange(data.data.schedule.events.Where(x => x.startTime > DateTime.Now));
 
 
@@ -242,7 +186,7 @@ namespace FLTeam.Controllers
 				{
 					response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getSchedule?hl=en-US&leagueId=" + id + "&pageToken=" + data.data.schedule.pages.newer);
 					result = await response.Content.ReadAsStringAsync();
-					data = JsonConvert.DeserializeObject<Madness<Schedu>>(result);
+					data = JsonConvert.DeserializeObject<Data<Schedu>>(result);
 					events.AddRange(data.data.schedule.events.Where(x => x.startTime > DateTime.Now));
 
 
@@ -261,7 +205,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getSchedule?hl=en-US&leagueId=" + id);
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<Schedu>>(result);
+				var data = JsonConvert.DeserializeObject<Data<Schedu>>(result);
 				events.AddRange(data.data.schedule.events.Where(x => x.startTime >startTime.Date && x.startTime< endTime.Date));
 
 
@@ -269,7 +213,7 @@ namespace FLTeam.Controllers
 				{
 					response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getSchedule?hl=en-US&leagueId=" + id + "&pageToken=" + data.data.schedule.pages.newer);
 					result = await response.Content.ReadAsStringAsync();
-					data = JsonConvert.DeserializeObject<Madness<Schedu>>(result);
+					data = JsonConvert.DeserializeObject<Data<Schedu>>(result);
 					events.AddRange(data.data.schedule.events.Where(x => x.startTime > startTime.Date && x.startTime < endTime.Date));
 
 				}
@@ -286,7 +230,7 @@ namespace FLTeam.Controllers
 				client.DefaultRequestHeaders.Add("x-api-key", Data.Key);
 				var response = await client.GetAsync("https://esports-api.lolesports.com/persisted/gw/getEventDetails?hl=es-ES&id=" + id);
 				var result = await response.Content.ReadAsStringAsync();
-				var data = JsonConvert.DeserializeObject<Madness<EventDetails>>(result);
+				var data = JsonConvert.DeserializeObject<Data<EventDetails>>(result);
 
 				return data.data.Event;
 

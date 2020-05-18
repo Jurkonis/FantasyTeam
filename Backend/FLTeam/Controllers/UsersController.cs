@@ -58,10 +58,11 @@ namespace FLTeam.Controllers
 		public async Task<ActionResult<User>> GetUser(int userId)
 		{
 			var data = await _context.User.FindAsync(userId);
-			if (data ==null)
+			if (data == null)
 			{
 				return NotFound();
 			}
+
 			data.Password = null;
 			data.Admin = false;
 			return Ok(data);
@@ -76,39 +77,17 @@ namespace FLTeam.Controllers
 				return BadRequest(ModelState);
 			}
 
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != userId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
 			if (details.FirstName == null || details.SecondName == null)
 				return NotFound();
 
-			var user = await _context.User.FindAsync(idd);
+			var user = await _context.User.FindAsync(userId);
 
 			user.FirstName = details.FirstName;
 			user.SecondName = details.SecondName;
 
 			_context.Entry(user).State = EntityState.Modified;
 
-			try
-			{
-				await _context.SaveChangesAsync();
-			}
-			catch (DbUpdateConcurrencyException)
-			{
-				if (!UserExists(userId))
-				{
-					return NotFound();
-				}
-				else
-				{
-					throw;
-				}
-			}
+			await _context.SaveChangesAsync();
 
 			return Ok(details);
 		}
@@ -139,7 +118,8 @@ namespace FLTeam.Controllers
 				return BadRequest("Username already exist");
 			}
 
-			_context.User.Add(new User { Username = user.Username, Password = user.Password });
+			_context.User.Add(new User
+				{Username = user.Username, Password = PasswordHandler.CreatePasswordHash(user.Password)});
 			await _context.SaveChangesAsync();
 
 			return Ok("Registration successfull");
@@ -154,22 +134,14 @@ namespace FLTeam.Controllers
 				return BadRequest(ModelState);
 			}
 
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != userId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
-			var user = await _context.User.FindAsync(idd);
+			var user = await _context.User.FindAsync(userId);
 
 			if (user.Password != pass.OldPassword)
 			{
 				return NotFound();
 			}
 
-			if (pass.NewPassword2 != pass.NewPassword2)
+			if (pass.NewPassword != pass.NewPassword2)
 			{
 				return NotFound();
 			}
@@ -178,21 +150,7 @@ namespace FLTeam.Controllers
 
 			_context.Entry(user).State = EntityState.Modified;
 
-			try
-			{
-				await _context.SaveChangesAsync();
-			}
-			catch (DbUpdateConcurrencyException)
-			{
-				if (!UserExists(userId))
-				{
-					return NotFound();
-				}
-				else
-				{
-					throw;
-				}
-			}
+			await _context.SaveChangesAsync();
 
 			return NoContent();
 		}
@@ -203,14 +161,6 @@ namespace FLTeam.Controllers
 		[HttpPut("DisableAuth/{userId}")]
 		public async Task<ActionResult> DisableAuth(int userId, Auth auth)
 		{
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != userId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
 			User user = _context.User.FirstOrDefault(x => x.Id == userId);
 			if (user == null)
 				return BadRequest();
@@ -224,21 +174,7 @@ namespace FLTeam.Controllers
 
 				_context.Entry(user).State = EntityState.Modified;
 
-				try
-				{
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!UserExists(userId))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
+				await _context.SaveChangesAsync();
 			}
 
 			return NoContent();
@@ -248,14 +184,6 @@ namespace FLTeam.Controllers
 		[HttpGet("EnableAuth/{userId}")]
 		public async Task<ActionResult> EnableAuth(int userId)
 		{
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != userId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
 			User user = await _context.User.FirstOrDefaultAsync(x => x.Id == userId);
 			if (user == null)
 				return BadRequest();
@@ -270,14 +198,6 @@ namespace FLTeam.Controllers
 		[HttpPut("EnableAuth/{userId}")]
 		public async Task<ActionResult> EnableAuth(int userId, Auth auth)
 		{
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != userId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
 			User user = await _context.User.FirstOrDefaultAsync(x => x.Id == userId);
 			if (user == null)
 				return BadRequest();
@@ -290,26 +210,14 @@ namespace FLTeam.Controllers
 				user.Tfa = true;
 				_context.Entry(user).State = EntityState.Modified;
 
-				try
-				{
-					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException)
-				{
-					if (!UserExists(userId))
-					{
-						return NotFound();
-					}
-					else
-					{
-						throw;
-					}
-				}
+				await _context.SaveChangesAsync();
+
 				return NoContent();
 			}
+
 			return BadRequest();
 		}
-		
+
 		[HttpPost("VerifyAuth/{userId}")]
 		public async Task<ActionResult> VerifyAuth(int userId, Auth auth)
 		{
@@ -324,6 +232,7 @@ namespace FLTeam.Controllers
 			{
 				return NoContent();
 			}
+
 			return BadRequest();
 		}
 
@@ -331,14 +240,6 @@ namespace FLTeam.Controllers
 		[HttpPost("BuyIcon/{userId}/{iconId}")]
 		public async Task<ActionResult> BuyIcon(int userId, int iconId)
 		{
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != userId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
 			User user = await _context.User.FirstOrDefaultAsync(x => x.Id == userId);
 			if (user == null)
 				return BadRequest();
@@ -347,7 +248,7 @@ namespace FLTeam.Controllers
 			if (icon == null)
 				return BadRequest();
 
-			if(icon.Price>user.Coins)
+			if (icon.Price > user.Coins)
 				return BadRequest();
 
 			user.Coins -= icon.Price;
@@ -357,7 +258,7 @@ namespace FLTeam.Controllers
 			if (icn != null)
 				return NotFound("Icon already owned");
 
-			UsersIcon usersIcon = new UsersIcon { UserId = user.Id, IconId = iconId };
+			UsersIcon usersIcon = new UsersIcon {UserId = user.Id, IconId = iconId};
 
 			_context.Entry(user).State = EntityState.Modified;
 			_context.UsersIcon.Add(usersIcon);
@@ -379,14 +280,6 @@ namespace FLTeam.Controllers
 		[HttpPut("Icons/{userId}/{name}")]
 		public async Task<ActionResult> ChangeIcon(int userId, string name)
 		{
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != userId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
 			User user = await _context.User.FirstOrDefaultAsync(x => x.Id == userId);
 			if (user == null)
 				return BadRequest();
@@ -401,11 +294,6 @@ namespace FLTeam.Controllers
 			await _context.SaveChangesAsync();
 
 			return NoContent();
-		}
-
-		private bool UserExists(int id)
-		{
-			return _context.User.Any(e => e.Id == id);
 		}
 	}
 }

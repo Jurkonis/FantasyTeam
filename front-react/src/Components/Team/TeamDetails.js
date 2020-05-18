@@ -10,7 +10,14 @@ class TeamDetails extends Component {
   }
   render() {
     let players = this.props.team.players.map((p) => <Player key={p.id} player={p} teamImg={this.props.team.image} roleImg={"../Images/Roles/" + p.role + ".png"} />);
-    return <div className="teamPlayersList">{players}</div>;
+    return (
+      <div>
+        <div>
+          <h1>{this.props.match.params.tid}</h1>
+        </div>
+        <div className="teamPlayersList">{players}</div>
+      </div>
+    );
   }
 }
 

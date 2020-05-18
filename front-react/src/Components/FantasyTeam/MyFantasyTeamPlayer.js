@@ -58,6 +58,7 @@ class MyFantasyTeamPlayer extends Component {
   handleClick() {
     if (this.props.remove === "false") {
       this.props.pickPlayer(
+        this.state.player.id,
         this.state.player.teamId,
         this.state.player.role,
         this.state.player.firstName,
@@ -75,6 +76,7 @@ class MyFantasyTeamPlayer extends Component {
     return (
       <div className="fantasyTeamPlayer">
         <div className="role">
+          {console.log(this.state.player)}
           <img src={this.renderSwitch(player.role)} alt="role" />
         </div>
         <div className="fantasyTeamPlayerImg">

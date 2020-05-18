@@ -1,0 +1,5 @@
+D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp3.1\FLTeam.csprojAssemblyReference.cache
+D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp3.1\FLTeam.csproj.CoreCompileInputs.cache
+D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp3.1\FLTeam.MvcApplicationPartsAssemblyInfo.cache
+D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp3.1\FLTeam.AssemblyInfoInputs.cache
+D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp3.1\FLTeam.AssemblyInfo.cs

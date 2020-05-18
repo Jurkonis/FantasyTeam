@@ -166,9 +166,7 @@ export class Tournament extends Component {
                     Register
                   </div>
                 ) : (
-                  <div className="myButton" onClick={this.handleClick.bind(this)}>
-                    Register for delete
-                  </div>
+                  ""
                 )}
                 {window.sessionStorage.getItem("admin") === "true" || window.sessionStorage.getItem("admin") === true ? (
                   tourn.startTime < date ? (

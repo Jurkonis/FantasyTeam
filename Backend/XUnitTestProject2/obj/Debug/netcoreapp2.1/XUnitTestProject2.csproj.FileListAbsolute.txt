@@ -1,0 +1,17 @@
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.deps.json
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.runtimeconfig.json
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.runtimeconfig.dev.json
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csprojAssemblyReference.cache
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csproj.CoreCompileInputs.cache
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.AssemblyInfoInputs.cache
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.AssemblyInfo.cs
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\FLTeam.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\FLTeam.pdb
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csproj.CopyComplete
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.pdb
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.dll
+D:\GitHub\Bakalauras\Backend\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.pdb

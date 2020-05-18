@@ -36,17 +36,12 @@ namespace FLTeam.Controllers
 		}
 
 		[Authorize(Roles = "Admin")]
-		[HttpPut("{id}")]
-		public async Task<IActionResult> PutIcon(int id, Icon icon)
+		[HttpPost]
+		public async Task<IActionResult> PostIcon( Icon icon)
 		{
 			if (!ModelState.IsValid)
 			{
 				return BadRequest(ModelState);
-			}
-
-			if (id != icon.Id)
-			{
-				return BadRequest();
 			}
 
 			_context.Entry(icon).State = EntityState.Modified;

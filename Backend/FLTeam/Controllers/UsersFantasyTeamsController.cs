@@ -65,14 +65,6 @@ namespace FLTeam.Controllers
 				return BadRequest(ModelState);
 			}
 
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != userId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
 			var user = await _context.User.FindAsync(userId);
 
 			if (user == null)
@@ -156,34 +148,16 @@ namespace FLTeam.Controllers
 		[HttpDelete("{userId}")]
 		public async Task<ActionResult> DeleteUsersFantasyTeam(int userId)
 		{
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(ModelState);
-			}
-
 			var usersFantasyTeam = await _context.UsersFantasyTeam.FindAsync(userId);
 			if (usersFantasyTeam == null)
 			{
 				return NotFound();
 			}
 
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != usersFantasyTeam.UserId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
 			_context.UsersFantasyTeam.Remove(usersFantasyTeam);
 			await _context.SaveChangesAsync();
 
-			return Ok(usersFantasyTeam);
-		}
-
-		private bool UsersFantasyTeamExists(int id)
-		{
-			return _context.UsersFantasyTeam.Any(e => e.Id == id);
+			return Ok();
 		}
 	}
 }

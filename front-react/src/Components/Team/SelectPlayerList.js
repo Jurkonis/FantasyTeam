@@ -16,6 +16,9 @@ class SelectPlayerList extends Component {
     return (
       <div>
         <MessageList />
+        <div>
+          <h1>{this.props.match.params.tid}</h1>
+        </div>
         <div className="teamPlayersList">
           {this.props.loaded ? (
             players

@@ -45,7 +45,6 @@ D:\GitHub\Bakalauras\Backend\FLTeam\bin\Debug\netcoreapp2.1\FLTeam.runtimeconfig
 D:\GitHub\Bakalauras\Backend\FLTeam\bin\Debug\netcoreapp2.1\FLTeam.runtimeconfig.dev.json
 D:\GitHub\Bakalauras\Backend\FLTeam\bin\Debug\netcoreapp2.1\FLTeam.dll
 D:\GitHub\Bakalauras\Backend\FLTeam\bin\Debug\netcoreapp2.1\FLTeam.pdb
-D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp2.1\FLTeam.csprojAssemblyReference.cache
 D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp2.1\FLTeam.csproj.CoreCompileInputs.cache
 D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp2.1\FLTeam.RazorAssemblyInfo.cache
 D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp2.1\FLTeam.RazorAssemblyInfo.cs
@@ -54,3 +53,4 @@ D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp2.1\FLTeam.AssemblyInfo.
 D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp2.1\FLTeam.RazorTargetAssemblyInfo.cache
 D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp2.1\FLTeam.dll
 D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp2.1\FLTeam.pdb
+D:\GitHub\Bakalauras\Backend\FLTeam\obj\Debug\netcoreapp2.1\FLTeam.csprojAssemblyReference.cache

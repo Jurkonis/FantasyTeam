@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchUserTeam } from "../../actions/userActions.js";
 import PropTypes from "prop-types";
 import MyFantasyTeamPlayer from "./MyFantasyTeamPlayer.js";
+import MessageList from "../Messages/MessagesList.js";
 
 class CompareFantasyTeams extends Component {
   componentDidMount() {
@@ -16,9 +17,13 @@ class CompareFantasyTeams extends Component {
       </li>
     ));
     return (
-      <div className="fantasyTeamWrapper">
-        <h1>{this.props.match.params.username} team</h1>
-        <div className="fantasyTeamList">{team}</div>
+      <div>
+        {" "}
+        <MessageList />
+        <div className="fantasyTeamWrapper">
+          <h1>{this.props.match.params.username} team</h1>
+          <div className="fantasyTeamList">{team}</div>
+        </div>
       </div>
     );
   }

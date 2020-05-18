@@ -85,6 +85,7 @@ export const fetchPlayer = (id) => (dispatch) => {
 };
 
 export const pickPlayer = (Id, TeamId, Role, FirstName, SecondName, Username, Image, Logo) => (dispatch) => {
+  console.log(Id, TeamId, Role, FirstName, SecondName, Username, Image, Logo);
   Axios.post(`http://localhost:5001/api/UsersFantasyTeams/` + window.sessionStorage.getItem("id"), { Id, TeamId, Role, FirstName, SecondName, Username, Image, Logo }, config)
     .then((res) => {
       dispatch({ type: ADD_FLASH_MESSAGE, message: { type: "success", text: "Player added to your team!" } });

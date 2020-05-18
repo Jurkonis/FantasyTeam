@@ -22,9 +22,13 @@ class Nav extends Component {
             <Link to="/Schedule">
               <li className="nav-link">Schedule</li>
             </Link>
-            <Link to="/Tournaments">
-              <li className="nav-link">Tournaments</li>
-            </Link>
+            {window.sessionStorage.getItem("id") !== null ? (
+              <Link to="/Tournaments">
+                <li className="nav-link">Tournaments</li>
+              </Link>
+            ) : (
+              ""
+            )}
             {window.sessionStorage.getItem("id") !== null ? (
               <Link to="/MyFantasyTeam">
                 <li className="nav-link">MyTeam</li>

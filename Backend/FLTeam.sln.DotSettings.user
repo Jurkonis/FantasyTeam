@@ -1,0 +1,52 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2b8b0909_002Da704_002D4509_002Dbaea_002D7e94babdd2e2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NameIsRequired" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::B49DF5EA-194E-4320-B85D-4E8D737F2A4D::.NETCoreApp,Version=v2.1::XUnitTestProject1.ToDoItemConfigurationTests.NameIsRequired&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::B49DF5EA-194E-4320-B85D-4E8D737F2A4D::.NETCoreApp,Version=v2.1::XUnitTestProject1.ToDoItemConfigurationTests.AddedItemShouldGetGeneratedId&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4524b427_002D4787_002D4940_002D873a_002Dd73118d4a480/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UsersFantasyTeamsControllerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5289765e_002D16d2_002D465d_002D9a72_002Dc2c56ffd2525/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RegisterUserInTournament_BadRequest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;Not&gt;&#xD;
+      &lt;And&gt;&#xD;
+        &lt;Project Location="D:\GitHub\Bakalauras\Backend\XUnitTestProject2" Presentation="&amp;lt;XUnitTestProject2&amp;gt;" /&gt;&#xD;
+        &lt;Namespace&gt;XUnitTestProject1&lt;/Namespace&gt;&#xD;
+      &lt;/And&gt;&#xD;
+    &lt;/Not&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::14ECC28C-F814-4BF5-93FA-7A982622E69C::.NETCoreApp,Version=v2.1::XUnitTestProject2.Tests.UsersControllerTests&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5b3f131e_002Db3fc_002D4a3f_002Db762_002D79cd223bad14/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="IconsControllerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::14ECC28C-F814-4BF5-93FA-7A982622E69C::.NETCoreApp,Version=v2.1::XUnitTestProject2.Tests.IconsControllerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::14ECC28C-F814-4BF5-93FA-7A982622E69C::.NETCoreApp,Version=v2.1::XUnitTestProject2.Tests.FantasyTournamentControllerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::14ECC28C-F814-4BF5-93FA-7A982622E69C::.NETCoreApp,Version=v2.1::XUnitTestProject2.Tests.UsersControllerTests.AddedItemShouldGetItemName&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::14ECC28C-F814-4BF5-93FA-7A982622E69C::.NETCoreApp,Version=v2.1::XUnitTestProject2.Tests.UsersControllerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::14ECC28C-F814-4BF5-93FA-7A982622E69C::.NETCoreApp,Version=v2.1::XUnitTestProject2.Tests.UsersFantasyTeamsControllerTests.AddedItemShouldGetItemName&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=63a34222_002Dee28_002D4273_002D901f_002Df0d4a1c383fe/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetTournament" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::14ECC28C-F814-4BF5-93FA-7A982622E69C::.NETCoreApp,Version=v2.1::XUnitTestProject2.Tests.LeaguesControllerTests.GetTournament&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a31155d0_002Dea8a_002D4fb8_002Db5d5_002D9208704888af/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ToDoItemConfigurationTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::B49DF5EA-194E-4320-B85D-4E8D737F2A4D::.NETCoreApp,Version=v2.1::XUnitTestProject1.ToDoItemConfigurationTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bcb02841_002D089f_002D4267_002Dad04_002D255b4bd782e9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddedItemShouldGetGeneratedId" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::B49DF5EA-194E-4320-B85D-4E8D737F2A4D::.NETCoreApp,Version=v2.1::XUnitTestProject1.ToDoItemConfigurationTests.AddedItemShouldGetGeneratedId&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f6989d9d_002D0730_002D4b6b_002D8af6_002Dfb0173605da4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddedItemShouldGetGeneratedId #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::14ECC28C-F814-4BF5-93FA-7A982622E69C::.NETCoreApp,Version=v2.1::XUnitTestProject1.ToDoItemConfigurationTests.AddedItemShouldGetGeneratedId&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

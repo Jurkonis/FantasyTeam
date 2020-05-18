@@ -5,6 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="libman.json" />
+    <Content Remove="package-lock.json" />
+    <Content Remove="package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove=".gitignore" />
+    <None Remove="README.md" />
+    <None Remove="yarn.lock" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

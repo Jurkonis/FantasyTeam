@@ -62,14 +62,6 @@ namespace FLTeam.Controllers
 		[HttpPost("Register/{userId}/{tournamentId}")]
 		public async Task<ActionResult> RegisterInTournament(int userId, int tournamentId)
 		{
-			var identity = (ClaimsIdentity)User.Identity;
-			int idd = Int16.Parse(identity.Name);
-
-			if (idd != userId)
-			{
-				return NotFound("Don't be sneaky!");
-			}
-
 			var user = await _context.User.FirstOrDefaultAsync(x => x.Id == userId);
 			var tournament = await _context.FantasyTournament.FirstOrDefaultAsync(x => x.Id == tournamentId);
 
@@ -428,6 +420,12 @@ namespace FLTeam.Controllers
 				_context.UsersInTournament.Remove(user);
 			}
 
+			var usersTeam = _context.UsersFantasyTeamInTournament.Where(x => x.TournamentId == id);
+
+			foreach (var team in usersTeam)
+			{
+				_context.UsersFantasyTeamInTournament.Remove(team);
+			}
 
 			_context.FantasyTournament.Remove(fantasyTournament);
 			await _context.SaveChangesAsync();
